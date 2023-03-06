@@ -50,18 +50,7 @@ function saveXML() {
   var xmlString = serializer.serializeToString(jats);
 
   // Create a Blob with the XML string and set the content type to "text/xml"
-  var blob = new Blob([xmlString], { type: "text/xml" });
-/*
-  // Create a download link for the file
-  var downloadLink = document.createElement("a");
-  downloadLink.href = window.URL.createObjectURL(blob);
-  downloadLink.download = "jats.xml";
 
-  // Append the download link to the document body and click it
-  document.body.appendChild(downloadLink);
-  downloadLink.click();
-  document.body.removeChild(downloadLink);
-  */
 
   var blob = new Blob([xmlString], { type: "text/xml;charset=utf-8" });
 
