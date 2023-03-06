@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JATS XML Editor</title>
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <!-- jQuery -->
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+    ></script>
+    <!-- Bootstrap JS -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
+    <script src="click.js"></script>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <h1>JATS XML Editor</h1>
+      <form onsubmit="saveXML()">
+        <!-- Front section -->
+        <div class="form-group">
+          <h2>Front</h2>
+
+          <label for="journal-meta">Journal Metadata:</label>
+          <textarea class="form-control" id="journal-meta" rows="5">
+          <journal-meta>
+            <journal-title-group>
+              <journal-title>Journal of Science</journal-title>
+            </journal-title-group>
+            <issn pub-type="epub">1234-5678</issn>
+            <issn pub-type="ppub">8765-4321</issn>
+            <publisher>
+              <publisher-name>Science Publishers</publisher-name>
+              <publisher-loc>San Francisco, USA</publisher-loc>
+            </publisher>
+          </journal-meta>
+        </textarea
+          >
+          <label for="article-meta">Article Metadata:</label>
+          <textarea class="form-control" id="article-meta" rows="10">
+          <article-meta>
+            <title-group>
+              <article-title>A Sample Article</article-title>
+              <subtitle>A Subtitle</subtitle>
+            </title-group>
+            <contrib-group>
+              <contrib contrib-type="author">
+                <name>
+                  <surname>Smith</surname>
+                  <given-names>John</given-names>
+                </name>
+                <xref ref-type="aff" rid="aff1">1</xref>
+                <email>j.smith@example.com</email>
+              </contrib>
+            </contrib-group>
+            <abstract>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+            </abstract>
+            <kwd-group>
+              <kwd>keyword 1</kwd>
+              <kwd>keyword 2</kwd>
+              <kwd>keyword 3</kwd>
+            </kwd-group>
+          </article-meta>
+        </textarea
+          >
+        </div>
+
+        <!-- Body section -->
+        <div class="form-group">
+          <h2>Body</h2>
+          <textarea class="form-control" id="body-content" rows="20">
+        <sec>
+          <title>Introduction</title>
+          <p>Paragraph 1</p>
+          <p>Paragraph 2</p>
+          <sec>
+            <title>Subsection 1</title>
+            <p>Paragraph 3</p>
+          </sec>
+          <sec>
+            <title>Subsection 2</title>
+            <p>Paragraph 4</p>
+            <sec>
+              <title>Subsubsection 1</title>
+              <p>Paragraph 5</p>
+            </sec>
+          </sec>
+        </sec>
+        <sec>
+          <title>Methods</title>
+          <p>Paragraph 6</p>
+        </sec>
+        <sec>
+          <title>Results</title>
+          <p>Paragraph 7</p>
+        </sec>
+        <sec>
+          <title>Discussion</title>
+          <p>Paragraph 8</p>
+        </sec>
+    </textarea
+          >
+        </div>
+        <!-- Back section -->
+        <div class="form-group">
+          <h2>Back</h2>
+          <label for="references">References:</label>
+          <textarea class="form-control" id="back-content" rows="10">
+        <ref-list>
+          <ref id="ref1">
+            <label>1</label>
+            <mixed-citation>
+              <surname>Doe</surname>
+              <given-names>Jane</given-names>
+              <year>2000</year>
+              <article-title>Article Title</article-title>
+              <source>Journal Name</source>
+              <volume>10</volume>
+              <issue>2</issue>
+              <fpage>50</fpage>
+              <lpage>60</lpage>
+              <comment>Some comment</comment>
+            </mixed-citation>
+          </ref>
+        </ref-list>
+    </textarea
+          >
+        </div>
+
+        <!-- Submit button -->
+        <button type="submit" class="btn btn-primary">Save XML</button>
+      </form>
+    </div>
+  </body>
+</html>
